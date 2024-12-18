@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { CleverTap } from '@awesome-cordova-plugins/clevertap/ngx';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private platform: Platform,
+    private clevertap: CleverTap
+  ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      // Notify CleverTap that the device is ready
+      this.clevertap.notifyDeviceReady();
+      console.log('CleverTap Initialized');
+    });
+  }
 }

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      CleverTap Integration
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,21 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">CleverTap</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Ready to test CleverTap integration?</strong>
+    <p>Use the buttons below to test functionality:</p>
+    <ion-button expand="full" color="primary" (click)="onUserLogin()">
+      Log User Profile
+    </ion-button>
+    <ion-button expand="full" color="secondary" (click)="recordEvent()">
+      Record Custom Event
+    </ion-button>
+    <ion-button expand="full" color="tertiary" (click)="recordSimpleEvent()">
+      Record Simple Event
+    </ion-button>
   </div>
 </ion-content>
