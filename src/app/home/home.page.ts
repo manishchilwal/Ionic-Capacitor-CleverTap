@@ -29,7 +29,7 @@ export class HomePage {
       first: 'partridge',
       second: 'turtledoves',
     };
-    CleverTap.recordEventWithName('Ionic Cordova Event', eventData);
+    CleverTap.recordEventWithNameAndProps('Ionic Cordova Event', eventData);
     console.log('Custom Event Sent to CleverTap:', eventData);
   }
 
